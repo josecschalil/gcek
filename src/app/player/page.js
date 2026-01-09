@@ -168,18 +168,20 @@ export default function VideoPlayer() {
   return (
     <div className="min-h-screen bg-black">
       {/* Header */}
-      <div className="bg-gray-900 border-b border-gray-800 p-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="bg-gray-900 border-b border-gray-800 p-3 sm:p-4">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
           <button
             onClick={goBack}
-            className="flex items-center space-x-2 text-white hover:text-blue-400 transition-colors"
+            className="flex items-center space-x-2 text-white hover:text-blue-400 transition-colors text-sm sm:text-base"
           >
-            <ArrowLeft size={20} />
-            <span>Back to Classes</span>
+            <ArrowLeft size={18} className="sm:w-5 sm:h-5" />
+            <span>Back</span>
           </button>
-          <div className="text-right">
-            <h1 className="text-white font-semibold">{videoData.title}</h1>
-            <p className="text-gray-400 text-sm">
+          <div className="text-left sm:text-right w-full sm:w-auto">
+            <h1 className="text-white font-semibold text-sm sm:text-base truncate">
+              {videoData.title}
+            </h1>
+            <p className="text-gray-400 text-xs sm:text-sm truncate">
               {videoData.subject} • {videoData.chapter}
             </p>
           </div>
@@ -230,14 +232,18 @@ export default function VideoPlayer() {
             </div>
 
             {/* Control Buttons */}
-            <div className="flex items-center justify-between px-4 py-3">
-              <div className="flex items-center space-x-3">
+            <div className="flex flex-col sm:flex-row items-center justify-between px-2 sm:px-4 py-2 sm:py-3 gap-2 sm:gap-0">
+              <div className="flex items-center space-x-2 sm:space-x-3">
                 {/* Play/Pause */}
                 <button
                   onClick={handlePlayPause}
                   className="text-white hover:text-blue-400 transition-colors"
                 >
-                  {isPlaying ? <Pause size={24} /> : <Play size={24} />}
+                  {isPlaying ? (
+                    <Pause size={20} className="sm:w-6 sm:h-6" />
+                  ) : (
+                    <Play size={20} className="sm:w-6 sm:h-6" />
+                  )}
                 </button>
 
                 {/* Stop */}
@@ -245,11 +251,11 @@ export default function VideoPlayer() {
                   onClick={handleStop}
                   className="text-white hover:text-blue-400 transition-colors"
                 >
-                  <Square size={24} />
+                  <Square size={20} className="sm:w-6 sm:h-6" />
                 </button>
 
                 {/* Time Display */}
-                <span className="text-sm text-gray-300 ml-2">
+                <span className="text-xs sm:text-sm text-gray-300">
                   {Math.floor(currentTime / 60)}:
                   {String(Math.floor(currentTime % 60)).padStart(2, "0")} /{" "}
                   {Math.floor(duration / 60)}:
@@ -257,10 +263,10 @@ export default function VideoPlayer() {
                 </span>
               </div>
 
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2 sm:space-x-4">
                 {/* Volume */}
-                <div className="flex items-center space-x-2">
-                  <Volume2 size={20} className="text-gray-300" />
+                <div className="flex items-center space-x-1 sm:space-x-2">
+                  <Volume2 size={16} className="text-gray-300 sm:w-5 sm:h-5" />
                   <input
                     type="range"
                     min="0"
@@ -268,13 +274,15 @@ export default function VideoPlayer() {
                     step="0.05"
                     value={volume}
                     onChange={handleVolumeChange}
-                    className="w-20 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer accent-blue-500"
+                    className="w-12 sm:w-20 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer accent-blue-500"
                   />
                 </div>
 
                 {/* Speed */}
-                <div className="flex items-center space-x-2">
-                  <span className="text-sm text-gray-300">Speed:</span>
+                <div className="flex items-center space-x-1 sm:space-x-2">
+                  <span className="text-xs sm:text-sm text-gray-300">
+                    Speed:
+                  </span>
                   <input
                     type="range"
                     min="0.5"
@@ -282,9 +290,9 @@ export default function VideoPlayer() {
                     step="0.1"
                     value={playbackRate}
                     onChange={handleSpeedChange}
-                    className="w-20 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer accent-blue-500"
+                    className="w-12 sm:w-20 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer accent-blue-500"
                   />
-                  <span className="text-sm text-gray-300 w-12">
+                  <span className="text-xs sm:text-sm text-gray-300 w-8 sm:w-12">
                     {playbackRate.toFixed(1)}x
                   </span>
                 </div>
@@ -294,23 +302,10 @@ export default function VideoPlayer() {
                   onClick={toggleFullscreen}
                   className="text-white hover:text-blue-400 transition-colors"
                 >
-                  <Maximize size={24} />
+                  <Maximize size={20} className="sm:w-6 sm:h-6" />
                 </button>
               </div>
             </div>
-          </div>
-
-          {/* Keyboard Shortcuts Info */}
-          <div
-            className={`absolute top-4 right-4 bg-black bg-opacity-70 rounded-lg p-3 text-xs text-gray-300 transition-opacity duration-300 ${
-              showControls ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <p className="font-semibold mb-1">Keyboard Shortcuts:</p>
-            <p>Space - Play/Pause</p>
-            <p>F - Fullscreen</p>
-            <p>← → - Seek 5s</p>
-            <p>Shift + &gt; / &lt; - Speed</p>
           </div>
         </div>
       </div>
