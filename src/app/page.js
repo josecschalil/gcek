@@ -13,171 +13,77 @@ import {
 const subjectsData = [
   {
     id: 1,
-    name: "Mathematics",
-    description: "Advanced calculus and algebra",
+    name: "Thermodynamics",
+    description: "Padich Reshapedraa",
     color: "bg-blue-500",
     chapters: [
       {
         id: 1,
-        name: "Chapter 1: Differential Calculus",
+        name: "Module 1",
         videos: [
           {
             id: 1,
-            title: "Video 1: Introduction to Derivatives",
-            url: "https://example.com/math-ch1-v1",
-          },
-          {
-            id: 2,
-            title: "Video 2: Chain Rule",
-            url: "https://example.com/math-ch1-v2",
-          },
-          {
-            id: 3,
-            title: "Video 3: Applications",
-            url: "https://example.com/math-ch1-v3",
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/49724_TD-MOD-1-FULL-19.mp4",
           },
         ],
       },
       {
         id: 2,
-        name: "Chapter 2: Integral Calculus",
+        name: "Module 2",
         videos: [
           {
             id: 1,
-            title: "Video 1: Basic Integration",
-            url: "https://example.com/math-ch2-v1",
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/51009_TD-MOD-2-P-1-19-(1).mp4",
           },
           {
             id: 2,
-            title: "Video 2: Integration Techniques",
-            url: "https://example.com/math-ch2-v2",
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/74823_module-2.mp4",
+          },
+          {
+            id: 3,
+            title: "Video 3",
+            url: "http://admin.ktuonlinestudy.com/uploads/87806_MOD-1-WORK-(1).mp4",
           },
         ],
       },
       {
         id: 3,
-        name: "Chapter 3: Linear Algebra",
+        name: "Module 3",
         videos: [
           {
             id: 1,
-            title: "Video 1: Matrices",
-            url: "https://example.com/math-ch3-v1",
-          },
-          {
-            id: 2,
-            title: "Video 2: Determinants",
-            url: "https://example.com/math-ch3-v2",
-          },
-          {
-            id: 3,
-            title: "Video 3: Eigenvalues",
-            url: "https://example.com/math-ch3-v3",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 2,
-    name: "Physics",
-    description: "Mechanics and thermodynamics",
-    color: "bg-green-500",
-    chapters: [
-      {
-        id: 1,
-        name: "Chapter 1: Kinematics",
-        videos: [
-          {
-            id: 1,
-            title: "Video 1: Motion in 1D",
-            url: "https://example.com/physics-ch1-v1",
-          },
-          {
-            id: 2,
-            title: "Video 2: Motion in 2D",
-            url: "https://example.com/physics-ch1-v2",
-          },
-          {
-            id: 3,
-            title: "Video 3: Projectile Motion",
-            url: "https://example.com/physics-ch1-v3",
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/57000_TD-MOD-3.mp4",
           },
         ],
       },
       {
-        id: 2,
-        name: "Chapter 2: Newton's Laws",
+        id: 4,
+        name: "Module 4",
         videos: [
           {
             id: 1,
-            title: "Video 1: First Law",
-            url: "https://example.com/physics-ch2-v1",
+            title: "Video 1",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/77302_MOD-4-TD-19---PURE-SUBSTANCE.mp4",
           },
           {
             id: 2,
-            title: "Video 2: Second Law",
-            url: "https://example.com/physics-ch2-v2",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 3,
-    name: "Chemistry",
-    description: "Organic and inorganic chemistry",
-    color: "bg-purple-500",
-    chapters: [
-      {
-        id: 1,
-        name: "Chapter 1: Atomic Structure",
-        videos: [
-          {
-            id: 1,
-            title: "Video 1: Atomic Models",
-            url: "https://example.com/chem-ch1-v1",
-          },
-          {
-            id: 2,
-            title: "Video 2: Electron Configuration",
-            url: "https://example.com/chem-ch1-v2",
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/45475_TD-MOD-4-P-2-Eqn-of-State.mp4",
           },
         ],
       },
       {
-        id: 2,
-        name: "Chapter 2: Chemical Bonding",
+        id: 5,
+        name: "Module 5",
         videos: [
           {
             id: 1,
-            title: "Video 1: Ionic Bonds",
-            url: "https://example.com/chem-ch2-v1",
-          },
-          {
-            id: 2,
-            title: "Video 2: Covalent Bonds",
-            url: "https://example.com/chem-ch2-v2",
-          },
-          {
-            id: 3,
-            title: "Video 3: Molecular Geometry",
-            url: "https://example.com/chem-ch2-v3",
-          },
-        ],
-      },
-      {
-        id: 3,
-        name: "Chapter 3: Organic Chemistry",
-        videos: [
-          {
-            id: 1,
-            title: "Video 1: Hydrocarbons",
-            url: "https://example.com/chem-ch3-v1",
-          },
-          {
-            id: 2,
-            title: "Video 2: Functional Groups",
-            url: "https://example.com/chem-ch3-v2",
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/46696_TD-19-M0D-5-FULL.mp4",
           },
         ],
       },
@@ -249,13 +155,20 @@ export default function VideoClassesPage() {
   };
 
   const handleVideoClick = (videoUrl, subjectName, chapterName, videoTitle) => {
-    const playerUrl = `/player?url=${encodeURIComponent(
-      videoUrl
-    )}&subject=${encodeURIComponent(subjectName)}&chapter=${encodeURIComponent(
-      chapterName
-    )}&video=${encodeURIComponent(videoTitle)}`;
-    console.log("Navigating to:", playerUrl);
-    alert(`In a real Next.js app, this would navigate to:\n${playerUrl}`);
+    // Store video data in sessionStorage
+    const videoData = {
+      url: videoUrl,
+      subject: subjectName,
+      chapter: chapterName,
+      title: videoTitle,
+    };
+
+    sessionStorage.setItem("currentVideo", JSON.stringify(videoData));
+
+    // Navigate to player page
+    // In real Next.js, use: router.push('/player')
+    // For demo, we'll open in new window
+    window.open("/player", "_blank");
   };
 
   const getTotalVideos = (subject) => {
@@ -412,7 +325,7 @@ export default function VideoClassesPage() {
                                           {video.title}
                                         </p>
                                         <p className="text-xs text-gray-500 truncate max-w-md mt-0.5">
-                                          {video.url}
+                                          Click to play
                                         </p>
                                       </div>
                                       <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500" />
