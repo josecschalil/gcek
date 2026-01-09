@@ -232,17 +232,6 @@ export default function VideoPlayer() {
             {/* Control Buttons */}
             <div className="flex items-center justify-between px-4 py-3">
               <div className="flex items-center space-x-3">
-                {/* File Input */}
-                <label className="cursor-pointer hover:text-blue-400 transition-colors text-white">
-                  📂
-                  <input
-                    type="file"
-                    accept="video/*"
-                    onChange={handleFileSelect}
-                    className="hidden"
-                  />
-                </label>
-
                 {/* Play/Pause */}
                 <button
                   onClick={handlePlayPause}
