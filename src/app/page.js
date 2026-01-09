@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { subjectsData } from "./data/data";
 import {
   ChevronDown,
   ChevronRight,
@@ -8,88 +9,6 @@ import {
   X,
   BookOpen,
 } from "lucide-react";
-
-// Define your subjects with chapters and videos
-const subjectsData = [
-  {
-    id: 1,
-    name: "Thermodynamics",
-    description: "Padich Reshapedraa",
-    color: "bg-blue-500",
-    chapters: [
-      {
-        id: 1,
-        name: "Module 1",
-        videos: [
-          {
-            id: 1,
-            title: "Video 1",
-            url: "http://admin.ktuonlinestudy.com/uploads/49724_TD-MOD-1-FULL-19.mp4",
-          },
-        ],
-      },
-      {
-        id: 2,
-        name: "Module 2",
-        videos: [
-          {
-            id: 1,
-            title: "Video 1",
-            url: "http://admin.ktuonlinestudy.com/uploads/51009_TD-MOD-2-P-1-19-(1).mp4",
-          },
-          {
-            id: 2,
-            title: "Video 2",
-            url: "http://admin.ktuonlinestudy.com/uploads/74823_module-2.mp4",
-          },
-          {
-            id: 3,
-            title: "Video 3",
-            url: "http://admin.ktuonlinestudy.com/uploads/87806_MOD-1-WORK-(1).mp4",
-          },
-        ],
-      },
-      {
-        id: 3,
-        name: "Module 3",
-        videos: [
-          {
-            id: 1,
-            title: "Video 1",
-            url: "http://admin.ktuonlinestudy.com/uploads/57000_TD-MOD-3.mp4",
-          },
-        ],
-      },
-      {
-        id: 4,
-        name: "Module 4",
-        videos: [
-          {
-            id: 1,
-            title: "Video 1",
-            url: "http://ktuonlinestudy.com/demoadmin/uploads/77302_MOD-4-TD-19---PURE-SUBSTANCE.mp4",
-          },
-          {
-            id: 2,
-            title: "Video 2",
-            url: "http://admin.ktuonlinestudy.com/uploads/45475_TD-MOD-4-P-2-Eqn-of-State.mp4",
-          },
-        ],
-      },
-      {
-        id: 5,
-        name: "Module 5",
-        videos: [
-          {
-            id: 1,
-            title: "Video 1",
-            url: "http://admin.ktuonlinestudy.com/uploads/46696_TD-19-M0D-5-FULL.mp4",
-          },
-        ],
-      },
-    ],
-  },
-];
 
 export default function VideoClassesPage() {
   const [expandedSubject, setExpandedSubject] = useState(null);
