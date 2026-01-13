@@ -296,4 +296,87 @@ export const subjectsData = [
       },
     ],
   },
+  {
+    id: 5,
+    name: "Fluid Machinery",
+    description: "OOmbii Nokk",
+    color: "bg-blue-500",
+    chapters: [
+      {
+        id: 1,
+        name: "Module 1",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/83566_F-MAC-Mod-1-P-1-APP.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/80223_FMY-MOD-1-P2-PWT.mp4",
+          },
+          {
+            id: 3,
+            title: "Video 3",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/98373_MOD-1-P-2---REACTION.mp4",
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: "Module 2",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/97735_F-MAC-Mod-2-P-1-APP.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/51780_MOD-3-FULL---FMY.mp4",
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: "Module 3",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/21665_MOD-4-FULL---FMY.mp4",
+          },
+        ],
+      },
+      {
+        id: 4,
+        name: "Module 4",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/69615_MOD-5-FULL---FMY.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/65577_FMY-MOD-6-FULL-ROTARY-COMPRESSORS-fq-(1).mp4",
+          },
+        ],
+      },
+      {
+        id: 5,
+        name: "Module 5",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/16141_MOD-6-FULL---TE.mp4",
+          },
+        ],
+      },
+    ],
+  },
 ];
