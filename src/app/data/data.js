@@ -379,4 +379,72 @@ export const subjectsData = [
       },
     ],
   },
+  {
+    id: 6,
+    name: "Electromagnetics",
+    description: "Set akkii Nokk",
+    color: "bg-blue-500",
+    chapters: [
+      {
+        id: 1,
+        name: "Module 1",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/99148_MOD-1-PART-1---AET-19.mp4",
+          },
+
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/67826_MOD-1-PART-2---AET-19.mp4",
+          },
+          {
+            id: 3,
+            title: "Video 3",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/78873_MOD-1-PART-3---AET-19.mp4",
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: "Module 2",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/82643_MOD-2-PART-1---AET-19.mp4",
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: "Module 3",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "https://admin.ktuonlinestudy.com/uploads/11196_MOD-3-PT-1---AET-19.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/49100_MOD-3-AET.mp4",
+          },
+        ],
+      },
+      {
+        id: 4,
+        name: "Module 4",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/76678_MOD-4-FULL---AET-19.mp4",
+          },
+        ],
+      },
+    ],
+  },
 ];
