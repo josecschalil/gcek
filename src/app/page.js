@@ -43,7 +43,7 @@ export default function VideoClassesPage() {
         .map((chapter) => {
           const chapterMatches = chapter.name.toLowerCase().includes(query);
           const matchingVideos = chapter.videos.filter((video) =>
-            video.title.toLowerCase().includes(query)
+            video.title.toLowerCase().includes(query),
           );
 
           if (chapterMatches || matchingVideos.length > 0) {
@@ -93,7 +93,7 @@ export default function VideoClassesPage() {
   const getTotalVideos = (subject) => {
     return subject.chapters.reduce(
       (total, chapter) => total + chapter.videos.length,
-      0
+      0,
     );
   };
 
@@ -233,7 +233,7 @@ export default function VideoClassesPage() {
                                           video.url,
                                           subject.name,
                                           chapter.name,
-                                          video.title
+                                          video.title,
                                         )
                                       }
                                       className="w-full flex items-center space-x-3 p-3 bg-white rounded-lg hover:bg-blue-50 hover:border-blue-200 border border-gray-200 transition-all group"

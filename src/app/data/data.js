@@ -299,7 +299,7 @@ export const subjectsData = [
   {
     id: 5,
     name: "Fluid Machinery",
-    description: "OOmbii Nokk",
+    description: "Padik",
     color: "bg-blue-500",
     chapters: [
       {
@@ -442,6 +442,213 @@ export const subjectsData = [
             id: 1,
             title: "Video 1",
             url: "http://ktuonlinestudy.com/demoadmin/uploads/76678_MOD-4-FULL---AET-19.mp4",
+          },
+        ],
+      },
+      {
+        id: 5,
+        name: "Module 5",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/20387_AET-MOD-5.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/81158_MOD-5-PT-2---AET-19.mp4",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 7,
+    name: "VLSI Circuits",
+    description: "Comeback",
+    color: "bg-blue-500",
+    chapters: [
+      {
+        id: 1,
+        name: "Module 1",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/76574_MOD-1-PART-1---VLSI-19.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com//uploads/77213_MOD-1-PART-2---VLSI-19-(2).mp4",
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: "Module 2",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com//uploads/64113_MOD-2-PART-1---VLSI-19.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com//uploads/61852_MOD-2-PART-2---VLSI-19.mp4",
+          },
+          {
+            id: 3,
+            title: "Video 3",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/92474_MOD-2-PART-3---VLSI-19.mp4",
+          },
+          {
+            id: 4,
+            title: "Video 4",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/96814_MOD-2-PART-4---VLSI-19.mp4",
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: "Module 3",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/95593_MOD-3-PART-1---VLSI-19.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/46082_MOD-3-PART-2---VLSI-19.mp4",
+          },
+        ],
+      },
+      {
+        id: 4,
+        name: "Module 4",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/23723_MOD-4---VLSI-19.mp4",
+          },
+        ],
+      },
+      {
+        id: 5,
+        name: "Module 5",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/86463_MOD-5-PART-1---VLSI-19.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/87443_MOD-5-PART-2---VLSI-19.mp4",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 8,
+    name: "ITC",
+    description: "Enthelum kanikk",
+    color: "bg-blue-500",
+    chapters: [
+      {
+        id: 1,
+        name: "Module 1",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/26096_INFORMATION-THEORY-AND-CODING-KTU--ITC---S7-EC--KOS-App---KTU-ONLINE-STUDY-App---PART---1.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/68660_43055_INFORMATION-THEORY-AND-CODING-KTU--ITC---S7-EC--KOS-App---KTU-ONLINE-STUDY-App---PART---2.mp4",
+          },
+          {
+            id: 3,
+            title: "Video 3",
+            url: "http://admin.ktuonlinestudy.com/uploads/52912_MOD1-P3-ITC.mp4",
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: "Module 2",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/38985_ITC-MOD-2-part-1.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/99955_ITC-MOD-2-PART-2.mp4",
+          },
+          {
+            id: 3,
+            title: "Video 3",
+            url: "http://admin.ktuonlinestudy.com/uploads/8458_MOD-2-PART-3---ITC-19.mp4",
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: "Module 3",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/80221_MOD-3-PART-1---ITC-19.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/17_MOD-3-PART-2---ITC-19.mp4",
+          },
+        ],
+      },
+      {
+        id: 4,
+        name: "Module 4",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/48096_MOD-4-PART-1---ITC-19.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/92042_MOD-4-PART-2---ITC-19.mp4",
+          },
+        ],
+      },
+      {
+        id: 5,
+        name: "Module 5",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/67227_MOD-5-PART-1---ITC-19.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/48591_MOD-5-PART-2---ITC-19.mp4",
           },
         ],
       },
