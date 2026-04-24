@@ -1,72 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { courses } from "./data";
 
-export default function PowerElectronicsHub() {
-  const data = [
-    {
-      title: "Fault Analysis",
-      icon: "⚡",
-      color: "#ef4444",
-      videos: [
-        "https://iframe.mediadelivery.net/embed/473225/3b027047-0f7d-4565-98f0-1751fc6705a3",
-        "https://iframe.mediadelivery.net/embed/473225/1fe36b50-cf37-4317-8049-c6ca06362bd5",
-        "https://iframe.mediadelivery.net/embed/473225/eee996d1-2553-4934-ab61-5fc1470a1b4c",
-        "https://iframe.mediadelivery.net/embed/473225/3ac0e5dc-f2d1-4acc-be2c-5db05401f6b4",
-        "https://iframe.mediadelivery.net/embed/473225/cc3c2acb-5fd6-4111-b458-277ba73be58c",
-        "https://iframe.mediadelivery.net/embed/473225/afc16267-b4fe-4ad2-b03f-d8573569249f",
-        "https://iframe.mediadelivery.net/embed/473225/77acf7a1-318e-43b6-a512-d96a74353799",
-      ],
-    },
-    {
-      title: "Load Flow Studies",
-      icon: "🔌",
-      color: "#3b82f6",
-      videos: [
-        "https://iframe.mediadelivery.net/embed/473225/fb8fa944-781b-45cc-9542-84084bc05a0b",
-        "https://iframe.mediadelivery.net/embed/473225/86f06edd-a55d-45c2-826c-0c4f2af90f1b",
-        "https://iframe.mediadelivery.net/embed/473225/a5f72738-970a-4d26-a680-26e1064789af",
-        "https://iframe.mediadelivery.net/embed/473225/9399cc4f-3422-4084-b20f-31bc63f61207",
-        "https://iframe.mediadelivery.net/embed/473222/265c9d42-25c0-48bf-b373-2f9e22fdb92b",
-        "https://iframe.mediadelivery.net/embed/473225/16a0b936-b34d-4c23-bdf6-f571d9e41df6",
-      ],
-    },
-    {
-      title: "Power System Stability",
-      icon: "🎯",
-      color: "#10b981",
-      videos: [
-        "https://iframe.mediadelivery.net/embed/473222/d137e121-b698-46f8-8cc9-1bbff3ba34cb",
-        "https://iframe.mediadelivery.net/embed/473225/582b61af-41db-4db9-be05-d880d254a2a7",
-        "https://iframe.mediadelivery.net/embed/473225/ee5c4173-48f6-4c9f-82f1-f55aa62c4b37",
-      ],
-    },
-    {
-      title: "AGC & AVR",
-      icon: "⚙️",
-      color: "#f59e0b",
-      videos: [
-        "https://iframe.mediadelivery.net/embed/473225/e3009640-8feb-4b6c-b58e-fc184aa4575e",
-        "https://iframe.mediadelivery.net/embed/473225/0fca8711-612b-4a5d-8b66-120b7f4da6b9",
-      ],
-    },
-    {
-      title: "Economic Load Dispatch & Unit Commitment",
-      icon: "💡",
-      color: "#8b5cf6",
-      videos: [
-        "https://iframe.mediadelivery.net/embed/473225/9d763d80-8ddb-45f2-a654-d295f8ae4789",
-        "https://iframe.mediadelivery.net/embed/473225/9b3aaa63-b74d-4c6f-88b4-713a92deb003",
-        "https://iframe.mediadelivery.net/embed/473225/27f0df16-4a8c-4265-b902-4950a4074357",
-      ],
-    },
-  ];
-
+export default function MsigmaHub() {
+  const [selectedCourse, setSelectedCourse] = useState(null);
   const [viewed, setViewed] = useState({});
   const [activeSection, setActiveSection] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Load from localStorage (with fallback to in-memory state)
+  // Load from localStorage
   useEffect(() => {
     try {
       const saved = localStorage.getItem("viewedVideos");
@@ -76,7 +19,7 @@ export default function PowerElectronicsHub() {
     }
   }, []);
 
-  // Save to localStorage (with fallback)
+  // Save to localStorage
   useEffect(() => {
     try {
       localStorage.setItem("viewedVideos", JSON.stringify(viewed));
@@ -101,6 +44,169 @@ export default function PowerElectronicsHub() {
     const watched = videos.filter((v) => viewed[v]).length;
     return { watched, total: videos.length };
   };
+
+  const getCourseStats = (course) => {
+    return course.sections.reduce(
+      (acc, section) => {
+        const p = getProgress(section.videos);
+        return { watched: acc.watched + p.watched, total: acc.total + p.total };
+      },
+      { watched: 0, total: 0 }
+    );
+  };
+
+  // ─── Course Listing View ─────────────────────────────────
+  if (!selectedCourse) {
+    return (
+      <div style={styles.root}>
+        <div style={styles.bgGradient} />
+        <div style={styles.bgBlobs}>
+          <div style={styles.blob1} />
+          <div style={styles.blob2} />
+          <div style={styles.blob3} />
+        </div>
+
+        {/* Catalog Header */}
+        <header style={styles.catalogHeader}>
+          <div style={styles.catalogHeaderInner}>
+            <div style={styles.catalogBrand}>
+              <div style={styles.catalogLogo}>📚</div>
+              <div>
+                <h1 style={styles.catalogTitle}>MSigma Courses</h1>
+                <p style={styles.catalogSubtitle}>
+                  Your curated video course library
+                </p>
+              </div>
+            </div>
+            <div style={styles.catalogBadge}>
+              <span style={styles.catalogBadgeNumber}>{courses.length}</span>
+              <span style={styles.catalogBadgeLabel}>
+                {courses.length === 1 ? "Course" : "Courses"}
+              </span>
+            </div>
+          </div>
+        </header>
+
+        {/* Course Cards */}
+        <main style={styles.catalogMain}>
+          <div style={styles.courseGrid}>
+            {courses.map((course) => {
+              const stats = getCourseStats(course);
+              const pct =
+                stats.total > 0
+                  ? Math.round((stats.watched / stats.total) * 100)
+                  : 0;
+
+              return (
+                <div
+                  key={course.id}
+                  id={`course-${course.id}`}
+                  style={styles.courseCard}
+                  onClick={() => {
+                    setSelectedCourse(course);
+                    setActiveSection(null);
+                    setSearchTerm("");
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform =
+                      "translateY(-8px) scale(1.02)";
+                    e.currentTarget.style.borderColor = course.color + "60";
+                    e.currentTarget.style.boxShadow = `0 20px 60px ${course.color}25`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0) scale(1)";
+                    e.currentTarget.style.borderColor =
+                      "rgba(255, 255, 255, 0.1)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                >
+                  {/* Gradient accent bar */}
+                  <div
+                    style={{
+                      height: "4px",
+                      background: `linear-gradient(90deg, ${course.gradient[0]}, ${course.gradient[1]})`,
+                      borderRadius: "16px 16px 0 0",
+                    }}
+                  />
+
+                  <div style={styles.courseCardBody}>
+                    {/* Icon + Title row */}
+                    <div style={styles.courseCardTop}>
+                      <div
+                        style={{
+                          ...styles.courseIcon,
+                          background: `linear-gradient(135deg, ${course.gradient[0]}25, ${course.gradient[1]}25)`,
+                          border: `2px solid ${course.color}40`,
+                        }}
+                      >
+                        <span style={{ fontSize: "36px" }}>{course.icon}</span>
+                      </div>
+                      <div style={styles.courseCardMeta}>
+                        <span style={styles.courseSectionCount}>
+                          {course.sections.length}{" "}
+                          {course.sections.length === 1
+                            ? "section"
+                            : "sections"}
+                        </span>
+                        <span style={styles.courseVideoCount}>
+                          {stats.total} videos
+                        </span>
+                      </div>
+                    </div>
+
+                    <h2 style={styles.courseCardTitle}>{course.title}</h2>
+                    <p style={styles.courseCardSubtitle}>{course.subtitle}</p>
+
+                    {/* Compact progress */}
+                    <div style={styles.courseProgressArea}>
+                      <div style={styles.courseProgressBarBg}>
+                        <div
+                          style={{
+                            ...styles.courseProgressBarFill,
+                            width: `${pct}%`,
+                            background: `linear-gradient(90deg, ${course.gradient[0]}, ${course.gradient[1]})`,
+                          }}
+                        />
+                      </div>
+                      <div style={styles.courseProgressLabels}>
+                        <span style={styles.courseProgressPct}>{pct}%</span>
+                        <span style={styles.courseProgressDetail}>
+                          {stats.watched}/{stats.total} watched
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* CTA */}
+                    <div
+                      style={{
+                        ...styles.courseCTA,
+                        background: `linear-gradient(135deg, ${course.gradient[0]}20, ${course.gradient[1]}20)`,
+                        borderColor: course.color + "40",
+                      }}
+                    >
+                      <span style={{ fontWeight: 600, fontSize: "13px" }}>
+                        {pct > 0 ? "Continue Learning" : "Start Course"}
+                      </span>
+                      <span style={{ fontSize: "18px" }}>→</span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </main>
+
+        <footer style={styles.footer}>
+          <p>Keep learning, keep growing! 🚀</p>
+        </footer>
+
+        <style>{keyframes}</style>
+      </div>
+    );
+  }
+
+  // ─── Course Detail View (existing design) ────────────────
+  const data = selectedCourse.sections;
 
   const totalStats = data.reduce(
     (acc, section) => {
@@ -128,10 +234,35 @@ export default function PowerElectronicsHub() {
       <header style={styles.header}>
         <div style={styles.headerContent}>
           <div style={styles.logoSection}>
-            <div style={styles.logo}>⚡</div>
+            {/* Back button */}
+            <button
+              onClick={() => setSelectedCourse(null)}
+              style={styles.backButton}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor =
+                  "rgba(255, 255, 255, 0.15)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor =
+                  "rgba(255, 255, 255, 0.08)";
+              }}
+            >
+              ←
+            </button>
+            <div style={styles.logo}>{selectedCourse.icon}</div>
             <div>
-              <h1 style={styles.mainTitle}>Power System 2</h1>
-              <p style={styles.subtitle}>Master advanced power systems engineering</p>
+              <h1
+                style={{
+                  ...styles.mainTitle,
+                  background: `linear-gradient(135deg, ${selectedCourse.gradient[0]}, ${selectedCourse.gradient[1]})`,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                {selectedCourse.title}
+              </h1>
+              <p style={styles.subtitle}>{selectedCourse.subtitle}</p>
             </div>
           </div>
 
@@ -148,7 +279,10 @@ export default function PowerElectronicsHub() {
             <div style={styles.statDivider} />
             <div style={styles.statItem}>
               <span style={styles.statNumber}>
-                {Math.round((totalStats.watched / totalStats.total) * 100)}%
+                {totalStats.total > 0
+                  ? Math.round((totalStats.watched / totalStats.total) * 100)
+                  : 0}
+                %
               </span>
               <span style={styles.statLabel}>Complete</span>
             </div>
@@ -165,7 +299,6 @@ export default function PowerElectronicsHub() {
           onChange={(e) => setSearchTerm(e.target.value)}
           style={styles.searchInput}
         />
-        <span style={styles.searchIcon}>🔍</span>
       </div>
 
       {/* Main Grid */}
@@ -344,6 +477,7 @@ export default function PowerElectronicsHub() {
   );
 }
 
+// ─── Keyframes & Fonts ──────────────────────────────────────
 const keyframes = `
   @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Poppins:wght@300;400;600;700;800&display=swap');
 
@@ -384,9 +518,22 @@ const keyframes = `
       max-height: 1000px;
     }
   }
+
+  @keyframes cardReveal {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 `;
 
+// ─── Styles ─────────────────────────────────────────────────
 const styles = {
+  // ── Shared ──
   root: {
     position: "relative",
     minHeight: "100vh",
@@ -450,6 +597,217 @@ const styles = {
     animation: "blobMove 18s ease-in-out infinite 4s",
   },
 
+  footer: {
+    textAlign: "center",
+    padding: "40px 20px",
+    color: "rgba(255, 255, 255, 0.5)",
+    fontSize: "14px",
+    borderTop: "1px solid rgba(255, 255, 255, 0.05)",
+    marginTop: "40px",
+  },
+
+  // ── Catalog Page ──
+  catalogHeader: {
+    position: "relative",
+    padding: "48px 20px 40px",
+    borderBottom: "1px solid rgba(255, 255, 255, 0.05)",
+    backdropFilter: "blur(20px)",
+    backgroundColor: "rgba(10, 14, 39, 0.4)",
+    animation: "slideIn 0.8s ease-out",
+  },
+
+  catalogHeaderInner: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "24px",
+  },
+
+  catalogBrand: {
+    display: "flex",
+    alignItems: "center",
+    gap: "18px",
+  },
+
+  catalogLogo: {
+    fontSize: "52px",
+    animation: "float 3s ease-in-out infinite",
+  },
+
+  catalogTitle: {
+    fontSize: "34px",
+    fontWeight: "800",
+    margin: "0",
+    background: "linear-gradient(135deg, #a78bfa, #60a5fa, #34d399)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    backgroundClip: "text",
+  },
+
+  catalogSubtitle: {
+    fontSize: "14px",
+    color: "rgba(255, 255, 255, 0.55)",
+    margin: "6px 0 0 0",
+    fontWeight: "300",
+    letterSpacing: "0.3px",
+  },
+
+  catalogBadge: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "4px",
+    padding: "14px 28px",
+    backgroundColor: "rgba(255, 255, 255, 0.05)",
+    borderRadius: "14px",
+    border: "1px solid rgba(255, 255, 255, 0.1)",
+    backdropFilter: "blur(10px)",
+  },
+
+  catalogBadgeNumber: {
+    fontSize: "28px",
+    fontWeight: "800",
+    color: "#a78bfa",
+  },
+
+  catalogBadgeLabel: {
+    fontSize: "11px",
+    color: "rgba(255, 255, 255, 0.55)",
+    textTransform: "uppercase",
+    letterSpacing: "1px",
+  },
+
+  catalogMain: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+    padding: "40px 20px",
+  },
+
+  courseGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))",
+    gap: "28px",
+    animation: "slideIn 0.8s ease-out 0.15s both",
+  },
+
+  courseCard: {
+    background: "rgba(255, 255, 255, 0.04)",
+    border: "1px solid rgba(255, 255, 255, 0.1)",
+    borderRadius: "16px",
+    backdropFilter: "blur(24px)",
+    overflow: "hidden",
+    cursor: "pointer",
+    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+    animation: "cardReveal 0.6s ease-out both",
+  },
+
+  courseCardBody: {
+    padding: "28px 24px 24px",
+    display: "flex",
+    flexDirection: "column",
+    gap: "16px",
+  },
+
+  courseCardTop: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+  },
+
+  courseIcon: {
+    width: "72px",
+    height: "72px",
+    borderRadius: "16px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  courseCardMeta: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-end",
+    gap: "4px",
+  },
+
+  courseSectionCount: {
+    fontSize: "12px",
+    color: "rgba(255, 255, 255, 0.55)",
+    fontWeight: "500",
+  },
+
+  courseVideoCount: {
+    fontSize: "12px",
+    color: "rgba(255, 255, 255, 0.4)",
+  },
+
+  courseCardTitle: {
+    margin: "0",
+    fontSize: "22px",
+    fontWeight: "700",
+    lineHeight: "1.25",
+  },
+
+  courseCardSubtitle: {
+    margin: "0",
+    fontSize: "13px",
+    color: "rgba(255, 255, 255, 0.5)",
+    lineHeight: "1.5",
+  },
+
+  courseProgressArea: {
+    marginTop: "4px",
+    display: "flex",
+    flexDirection: "column",
+    gap: "8px",
+  },
+
+  courseProgressBarBg: {
+    height: "6px",
+    backgroundColor: "rgba(255, 255, 255, 0.08)",
+    borderRadius: "3px",
+    overflow: "hidden",
+  },
+
+  courseProgressBarFill: {
+    height: "100%",
+    borderRadius: "3px",
+    transition: "width 0.5s ease",
+  },
+
+  courseProgressLabels: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+
+  courseProgressPct: {
+    fontSize: "13px",
+    fontWeight: "700",
+    color: "rgba(255, 255, 255, 0.85)",
+  },
+
+  courseProgressDetail: {
+    fontSize: "11px",
+    color: "rgba(255, 255, 255, 0.4)",
+  },
+
+  courseCTA: {
+    marginTop: "4px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "12px 16px",
+    borderRadius: "10px",
+    border: "1px solid",
+    color: "rgba(255, 255, 255, 0.85)",
+    transition: "all 0.3s ease",
+  },
+
+  // ── Detail Page ──
   header: {
     position: "relative",
     padding: "40px 20px",
@@ -464,7 +822,7 @@ const styles = {
     margin: "0 auto",
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: "flex-start",
     gap: "40px",
     flexWrap: "wrap",
   },
@@ -473,6 +831,23 @@ const styles = {
     display: "flex",
     alignItems: "center",
     gap: "16px",
+  },
+
+  backButton: {
+    width: "42px",
+    height: "42px",
+    borderRadius: "12px",
+    border: "1px solid rgba(255, 255, 255, 0.15)",
+    backgroundColor: "rgba(255, 255, 255, 0.08)",
+    color: "#ffffff",
+    fontSize: "20px",
+    cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontFamily: "'Poppins', sans-serif",
+    transition: "all 0.2s ease",
+    flexShrink: 0,
   },
 
   logo: {
@@ -506,6 +881,7 @@ const styles = {
     borderRadius: "12px",
     border: "1px solid rgba(255, 255, 255, 0.1)",
     backdropFilter: "blur(10px)",
+    marginTop: "8px",
   },
 
   statItem: {
@@ -560,8 +936,10 @@ const styles = {
     position: "absolute",
     left: "16px",
     top: "50%",
-    transform: "translateY(-50%)",
+    transform: "translateY(-45%)",
     pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
   },
 
   mainContent: {
@@ -787,14 +1165,5 @@ const styles = {
     fontSize: "13px",
     fontFamily: "'Poppins', sans-serif",
     transition: "all 0.2s ease",
-  },
-
-  footer: {
-    textAlign: "center",
-    padding: "40px 20px",
-    color: "rgba(255, 255, 255, 0.5)",
-    fontSize: "14px",
-    borderTop: "1px solid rgba(255, 255, 255, 0.05)",
-    marginTop: "40px",
   },
 };
