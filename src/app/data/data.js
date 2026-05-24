@@ -654,10 +654,11 @@ export const subjectsData = [
       },
     ],
   },
+
   {
     id: 9,
-    name: "ITC",
-    description: "Enthelum kanikk",
+    name: "Circuits & Networks",
+    description: "Fanish Monu Vendii",
     color: "bg-blue-500",
     chapters: [
       {
@@ -667,17 +668,17 @@ export const subjectsData = [
           {
             id: 1,
             title: "Video 1",
-            url: "http://admin.ktuonlinestudy.com/uploads/26096_INFORMATION-THEORY-AND-CODING-KTU--ITC---S7-EC--KOS-App---KTU-ONLINE-STUDY-App---PART---1.mp4",
+            url: "http://admin.ktuonlinestudy.com/uploads/99645_Mod-1-part-1-can-APP.mp4",
           },
           {
             id: 2,
             title: "Video 2",
-            url: "http://admin.ktuonlinestudy.com/uploads/68660_43055_INFORMATION-THEORY-AND-CODING-KTU--ITC---S7-EC--KOS-App---KTU-ONLINE-STUDY-App---PART---2.mp4",
+            url: "http://admin.ktuonlinestudy.com/uploads/95910_Mod-1-part-2-can.mp4",
           },
           {
             id: 3,
             title: "Video 3",
-            url: "http://admin.ktuonlinestudy.com/uploads/52912_MOD1-P3-ITC.mp4",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/25964_MOD-1-PART-3-CAN.mp4",
           },
         ],
       },
@@ -688,17 +689,12 @@ export const subjectsData = [
           {
             id: 1,
             title: "Video 1",
-            url: "http://admin.ktuonlinestudy.com/uploads/38985_ITC-MOD-2-part-1.mp4",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/42420_MOD-2-PART-1-CAN--19.mp4",
           },
           {
             id: 2,
             title: "Video 2",
-            url: "http://admin.ktuonlinestudy.com/uploads/99955_ITC-MOD-2-PART-2.mp4",
-          },
-          {
-            id: 3,
-            title: "Video 3",
-            url: "http://admin.ktuonlinestudy.com/uploads/8458_MOD-2-PART-3---ITC-19.mp4",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/30744_MOD-2-PART-2-CAN--19.mp4",
           },
         ],
       },
@@ -709,12 +705,17 @@ export const subjectsData = [
           {
             id: 1,
             title: "Video 1",
-            url: "http://ktuonlinestudy.com/demoadmin/uploads/80221_MOD-3-PART-1---ITC-19.mp4",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/10406_MOD-3-PART-1-CAN--19.mp4",
           },
           {
             id: 2,
             title: "Video 2",
-            url: "http://ktuonlinestudy.com/demoadmin/uploads/17_MOD-3-PART-2---ITC-19.mp4",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/46629_MOD-3-PART-2-CAN--19.mp4",
+          },
+          {
+            id: 3,
+            title: "Video 3",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/73645_MOD-3-PART-3-CAN--19.mp4",
           },
         ],
       },
@@ -725,12 +726,17 @@ export const subjectsData = [
           {
             id: 1,
             title: "Video 1",
-            url: "http://ktuonlinestudy.com/demoadmin/uploads/48096_MOD-4-PART-1---ITC-19.mp4",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/91859_MOD-4-PART-1-CAN--19.mp4",
           },
           {
             id: 2,
             title: "Video 2",
-            url: "http://ktuonlinestudy.com/demoadmin/uploads/92042_MOD-4-PART-2---ITC-19.mp4",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/39047_MOD-4-PART-2-CAN--19.mp4",
+          },
+          {
+            id: 3,
+            title: "Video 3",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/687_MOD-4-PART-3-CAN--19.mp4",
           },
         ],
       },
@@ -741,12 +747,17 @@ export const subjectsData = [
           {
             id: 1,
             title: "Video 1",
-            url: "http://ktuonlinestudy.com/demoadmin/uploads/67227_MOD-5-PART-1---ITC-19.mp4",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/93206_MOD-5-PART-1-CAN--19.mp4",
           },
           {
             id: 2,
             title: "Video 2",
-            url: "https://iframe.mediadelivery.net/embed/473225/77acf7a1-318e-43b6-a512-d96a74353799",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/69103_MOD-5-PART-2-CAN--19.mp4",
+          },
+          {
+            id: 3,
+            title: "Video 3",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/49320_MOD-5-PART-3-CAN--19.mp4",
           },
         ],
       },
