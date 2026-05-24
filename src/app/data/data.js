@@ -763,4 +763,82 @@ export const subjectsData = [
       },
     ],
   },
+  {
+    id: 10,
+    name: "Programming in C",
+    description: "Siva C Pass avaan Vendii",
+    color: "bg-blue-500",
+    chapters: [
+      {
+        id: 1,
+        name: "Module 1",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com//uploads/12265_PIC-M1P1--24-(720p).mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/49957_MOD-1-P-2-PIC.mp4",
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: "Module 2",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/18801_PIC-MOD-2-PART-1.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/49643_PIC-MOD-2-PART-2.mp4",
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: "Module 3",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/82592_MOD-3---PIC.mp4",
+          },
+        ],
+      },
+      {
+        id: 4,
+        name: "Module 4",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/71688_MOD-4-PART-1-PIC.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/33288_MOD-4-PART-2-PIC.mp4",
+          },
+        ],
+      },
+      {
+        id: 5,
+        name: "Module 5",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com/uploads/66693_MOD-5-FULL--PIC.mp4",
+          },
+        ],
+      },
+    ],
+  },
 ];
