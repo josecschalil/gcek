@@ -841,4 +841,108 @@ export const subjectsData = [
       },
     ],
   },
+
+  {
+    id: 11,
+    name: "Microwaves And Antennas",
+    description: "Arjun EC kk padikkan",
+    color: "bg-blue-500",
+    chapters: [
+      {
+        id: 1,
+        name: "Module 1",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com//uploads/24216_MOD-1-PART-1---MA-19.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com/uploads/76707_AWP-MOD-1-PART-2.mp4",
+          },
+          {
+            id: 3,
+            title: "Video 3",
+            url: "http://admin.ktuonlinestudy.com//uploads/60626_MOD-1-PART-3---MA-19.mp4",
+          },
+          {
+            id: 4,
+            title: "Video 4",
+            url: "http://admin.ktuonlinestudy.com//uploads/52030_MOD-1-PART-4---MA-19.mp4",
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: "Module 2",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/64262_MODULE-5---AWP.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/44633_MOD-2-PART-2---MA-19.mp4",
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: "Module 3",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/3521_MOD-3-PART-1-AWP-(2).mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://ktuonlinestudy.com/demoadmin/uploads/74093_MOD-3-PART-2-AWP-(2).mp4",
+          },
+        ],
+      },
+      {
+        id: 4,
+        name: "Module 4",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com//uploads/86400_MOD-4-PART-1---MA-19.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com//uploads/40883_MOD-4-PART-2---MA-19.mp4",
+          },
+          {
+            id: 3,
+            title: "Video 3",
+            url: "http://admin.ktuonlinestudy.com//uploads/98828_MOD-3-FULL-MWR.mp4",
+          },
+        ],
+      },
+      {
+        id: 5,
+        name: "Module 5",
+        videos: [
+          {
+            id: 1,
+            title: "Video 1",
+            url: "http://admin.ktuonlinestudy.com//uploads/87177_MODULE-4-MWR.mp4",
+          },
+          {
+            id: 2,
+            title: "Video 2",
+            url: "http://admin.ktuonlinestudy.com//uploads/56303_mwr-mod-5-full-premiere.mp4",
+          },
+        ],
+      },
+    ],
+  },
 ];
